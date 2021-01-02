@@ -2,7 +2,7 @@
 
 > 协议：[CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/)
 > 
-> 欢迎任何人参与和完善：一个人可以走的很快，但是一群人却可以走的更远。
+> 敢同恶鬼争高下，不向霸王让寸分。——《七律·庆祝第二次核试验成功》
 
 * [在线阅读](https://sec-wiki.apachecn.org)
 * [在线阅读（Gitee）](https://apachecn.gitee.io/sec-wiki/)
